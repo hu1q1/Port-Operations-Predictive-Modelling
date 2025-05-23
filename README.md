@@ -37,10 +37,10 @@ Ensures the model's performance is evaluated on unseen data to prevent overfitti
 4. Model Selection & Training (using Scikit-learn Estimators)
 Use of various regression algorithms for prediction.
 
-5. Model Evaluation (using Scikit-learn Metrics)
+5. Hyperparameter Tuning & Model Evaluation (using Scikit-learn Metrics)
 To quantify our models' performances for comparison.
 
 6. Interpretation & Identifying Opportunities for Efficiency Improvements
 Gain actionable insights from the model.
 
-Note: as the analysis is based on fictitious data, the conclusions derived from it are not indicative of what is happening in actual ports. However, if actual datasets are used, re-interpretation can be easily done and insights for port operation efficiency improvements can be obtained.
+Note: as the analysis is based on fictitious data, the conclusions derived from it are not indicative of what is happening in actual ports. However, once the fictitious datasets are replaced with actual ones, the workflow can be easily re-run and re-interpreted to obtain high business impact insights for port operation efficiency improvements.
