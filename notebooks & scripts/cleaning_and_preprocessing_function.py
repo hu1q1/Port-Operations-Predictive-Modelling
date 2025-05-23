@@ -26,8 +26,10 @@ def clean_n_preprocess(df):
     # Exclude Vessel_ID as it's an identifier and Arrival_Date as we'd typically engineer features from it first
     # If Arrival_Date was to be used, feature engineering (extracting month, day, etc.) would happen *before* this step.
     # Let's assume for now Arrival_Date is not directly used in this encoding/scaling step but other features are.
-    X = df.drop(columns=['Actual_Operation_Duration_Hours', 'Vessel_ID', 'Arrival_Date']) #13 colums currently
-    y = df['Actual_Operation_Duration_Hours']
+    X = df.drop(columns=['Vessel_ID', 'Arrival_Date']) #13 colums currently
+    # X = df.drop(columns=['Actual_Operation_Duration_Hours', 'Vessel_ID', 'Arrival_Date']) #13 colums currently
+
+    # y = df['Actual_Operation_Duration_Hours']
 
     # print("\n --------------------- Features (X) head: ---------------------")
     # print(X.head())
@@ -73,4 +75,12 @@ def clean_n_preprocess(df):
     # --- 6. Apply the Preprocessing ---
 
     # Fit and transform the data
-    return preprocessor.fit_transform(X)
+    X_processed = preprocessor.fit_transform(X)
+
+    # The output of ColumnTransformer (with OneHotEncoder) can be a NumPy array.
+    # useful to get the feature names after one-hot encoding.
+    feature_names_out = preprocessor.get_feature_names_out()
+
+
+    # Convert the processed NumPy array back to a DataFrame (optional, for inspection)
+    return pd.DataFrame(X_processed, columns=feature_names_out, index=X.index)
