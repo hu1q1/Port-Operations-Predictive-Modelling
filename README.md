@@ -27,14 +27,15 @@ This prediction can help the port optimize resource allocation (cranes, labor, i
 
 1. Data Generation (using Pandas & NumPy)
 Real-world port operational data is typically proprietary and collected from various internal systems. Therefore, this project shall be based on fictitious data generated with plausible values based on credible sources.
+1a. {WIP} EDA (also to verify data generation)
 
 2. Data Cleaning & Preprocessing (using Pandas & Scikit-learn Preprocessing modules)
 Transformation of raw data into a format suitable for ML algorithms and removal of noisy data.
 
-3. Data Splitting (using Scikit-learn Model Selection)
+3. Data Splitting (using Scikit-learn Model Selection module)
 Ensures the model's performance is evaluated on unseen data to prevent overfitting.
 
-4. Model Selection & Training (using Scikit-learn Estimators)
+4. Model Selection & Training (using Scikit-learn Estimators module)
 Use of various regression algorithms for prediction.
 
 5. Hyperparameter Tuning & Model Evaluation (using Scikit-learn Metrics)
